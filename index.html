@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XezyBall 3D — Accueil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="XezyBall 3D Accueil">
+        <span class="brand-logo">⚪️</span><span class="brand-text">XezyBall <strong>3D</strong></span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Navigation principale">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navMenu" aria-label="Ouvrir le menu">☰</button>
+        <ul id="navMenu" class="nav-list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="designs.html">Designs</a></li>
+          <li><a href="license.html">Licence</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="btn cta" href="designs.html">Voir la galerie</a></li>
+          <li><button id="theme-toggle" class="icon-btn" aria-label="Basculer le thème">🌗</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero full" aria-label="Section Héro">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <h1 class="title-xl reveal">XezyBall&nbsp;<span class="accent">3D</span></h1>
+        <p class="subtitle reveal delay-1">Pokéballs imprimées en 3D – qualité premium, finition soignée.</p>
+        <div class="actions reveal delay-2">
+          <a class="btn primary" href="designs.html">Découvrir les designs</a>
+          <a class="btn ghost" href="#about">En savoir plus</a>
+        </div>
+      </div>
+      <img class="hero-bg" src="assets/images/Psykokwak_ball.png" alt="Bannière avec Pokéballs 3D">
+    </section>
+
+    <section id="about" class="section about container" aria-labelledby="about-title">
+      <h2 id="about-title" class="section-title reveal">À propos</h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>XezyBall 3D crée et revend des Pokéballs 3D avec un souci du détail et des matériaux de qualité. Inspiré d’un style minimaliste à la N3D Melbourne, notre site met en avant des visuels clairs, une navigation simple et une expérience fluide.</p>
+          <a class="btn link" href="about.html">Notre histoire →</a>
+        </div>
+        <div class="about-media reveal delay-1">
+          <img src="assets/about.jpg" alt="Atelier d'impression 3D XezyBall 3D">
+        </div>
+      </div>
+    </section>
+
+    <section class="section designs container" aria-labelledby="designs-title">
+      <h2 id="designs-title" class="section-title reveal">Designs populaires</h2>
+      <div class="grid cards">
+        <article class="card reveal">
+          <img src="assets/images/gengar_ball.png" alt="Pokéball classique">
+          <div class="card-body">
+            <h3>Pokéball Classique</h3>
+            <a class="btn small" href="designs.html">Voir</a>
+          </div>
+        </article>
+        <article class="card reveal delay-1">
+          <img src="assets/images/pikachu_ball.png" alt="Super Ball">
+          <div class="card-body">
+            <h3>Super Ball</h3>
+            <a class="btn small" href="designs.html">Voir</a>
+          </div>
+        </article>
+        <article class="card reveal delay-2">
+          <img src="assets/images/Psykokwak_ball.png" alt="Hyper Ball">
+          <div class="card-body">
+            <h3>Hyper Ball</h3>
+            <a class="btn small" href="designs.html">Voir</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section license container" aria-labelledby="license-title">
+      <h2 id="license-title" class="section-title reveal">Licence commerciale</h2>
+      <p class="reveal">Tu souhaites revendre nos modèles imprimés ? Consulte notre politique de licence et démarre sereinement.</p>
+      <a class="btn primary reveal" href="license.html">En savoir plus</a>
+    </section>
+
+    <section class="section community container" aria-labelledby="community-title">
+      <h2 id="community-title" class="section-title reveal">Rejoins la communauté</h2>
+      <div class="chip-group reveal">
+        <a class="chip" href="#" aria-label="Lien Discord">Discord</a>
+        <a class="chip" href="#" aria-label="Lien Makerworld">Makerworld</a>
+        <a class="chip" href="#" aria-label="Lien Patreon">Patreon</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 XezyBall 3D — Tous droits réservés.</p>
+      <a class="link" href="contact.html">Nous contacter</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
