@@ -48,3 +48,41 @@
     });
   });
 })();
+
+// Formulaire
+const form = document.getElementById('contact-form');
+const formMessage = document.getElementById('form-message');
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  formMessage.style.display = 'none';
+  const formData = new FormData(form);
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    });
+    if (response.ok) {
+      showMessage('Merci pour votre message !', 'var(--primary)');
+      form.reset();
+    } else {
+      throw new Error('Erreur');
+    }
+  } catch {
+    showMessage('Erreur, veuillez réessayer.', 'red');
+  }
+});
+
+function showMessage(text, color) {
+  formMessage.textContent = text;
+  formMessage.style.color = color;
+  formMessage.classList.add('visible');
+  formMessage.style.display = 'block';
+  setTimeout(() => {
+    formMessage.classList.remove('visible');
+    setTimeout(() => {
+      formMessage.style.display = 'none';
+    }, 500);
+  }, 5000);
+}
