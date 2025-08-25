@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - XezyBalls 3D</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-logo">⚪️</span><span class="brand-text">XezyBall <strong>3D</strong></span></a>
+      <nav class="nav">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navMenu">☰</button>
+        <ul id="navMenu" class="nav-list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="designs.html">Designs</a></li>
+          <li><a href="license.html">Licence</a></li>
+          <li><a class="active" href="contact.html">Contact</a></li>
+          <li><button id="theme-toggle" class="icon-btn">🌗</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section Contact -->
+  <section class="section">
+    <div class="container narrow">
+      <h1 class="section-title">Contact</h1>
+      <p style="text-align:center; margin-bottom:24px;">Une question, une commande, ou envie de discuter ? Remplis le formulaire ci-dessous 👇</p>
+
+      <form id="contact-form" action="https://formspree.io/f/xxxxxx" method="POST" class="card" style="padding:20px;">
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <input type="text" name="name" placeholder="Votre nom" required style="padding:12px; border:1px solid var(--border); border-radius:8px; background:var(--bg-elev); color:var(--text)">
+          <input type="email" name="email" placeholder="Votre email" required style="padding:12px; border:1px solid var(--border); border-radius:8px; background:var(--bg-elev); color:var(--text)">
+          <textarea name="message" placeholder="Votre message" rows="5" required style="padding:12px; border:1px solid var(--border); border-radius:8px; background:var(--bg-elev); color:var(--text)"></textarea>
+          <button type="submit" class="btn primary">Envoyer</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 XezyBall 3D</p>
+      <a class="link" href="contact.html">Nous contacter</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
