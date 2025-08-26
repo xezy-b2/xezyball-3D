@@ -188,6 +188,23 @@ body{
   transform: translateY(-2px);
 }
 
+/* Section communauté */
+.section.community {
+  text-align: center;       /* Centre le texte et les boutons */
+  padding: 3rem 1rem;       /* Un peu d’air autour */
+}
+
+.section.community .section-title {
+  margin-bottom: 1.5rem;    /* Espace entre le titre et les boutons */
+}
+
+.section.community .chip-group {
+  display: flex;
+  justify-content: center;  /* Centre les boutons horizontalement */
+  gap: 1rem;                /* Espace entre les boutons */
+  flex-wrap: wrap;          /* Permet de passer à la ligne sur petit écran */
+}
+
 /* --- Hero Responsive (Mobile) --- */
 @media (max-width: 600px) {
   .hero.full {
@@ -225,4 +242,26 @@ body{
     width: 100%; /* boutons prennent toute la largeur dispo */
     text-align: center;
   }
+}
+
+
+/* Discord */
+.chip.discord {
+  background: #5865F2; /* violet Discord */
+}
+.chip.discord:hover {
+  background: #4752c4;
+}
+
+/* Makerworld (exemple bleu/gris cube, tu peux changer) */
+.chip.makerworld {
+  background: #0099ff; /* bleu */
+}
+.chip.makerworld:hover {
+  background: #007acc;
+}
+
+/* Patreon */
+.chip.patreon {
+  background: #FF424D; /* rouge Patreon */
 }
