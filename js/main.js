@@ -96,61 +96,64 @@
   }
 })();
 
-// Pokémon qui défilent dans le footer
+
+
+// Pokémon qui défilent dans le footer (Gen 1 uniquement)
 (function(){
   const footer = document.querySelector('footer');
   if(!footer) return;
 
-  const pokemonList = [
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png", // Pikachu
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",  // Bulbizarre
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",  // Salamèche
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",  // Carapuce
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png", // Gengar
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/197.png", // Noctali
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/470.png", // Noctali
-  ];
+  const maxPokemon = 151; // Limité à la 1ère génération
 
   function spawnWalkingPokemon(){
     const img = document.createElement('img');
-    img.src = pokemonList[Math.floor(Math.random() * pokemonList.length)];
     img.className = "footer-pokemon-walk";
+
+    // Choix aléatoire parmi les 151 premiers Pokémon
+    const randomId = Math.floor(Math.random() * maxPokemon) + 1;
+    img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomId}.png`;
 
     // Taille aléatoire (effet de profondeur)
     const scale = 0.7 + Math.random() * 0.6;
     img.style.transform = `scale(${scale})`;
 
-    // Position de départ aléatoire
+    // Position de départ aléatoire dans le footer
     const startX = Math.random() * footer.offsetWidth;
     const startY = Math.random() * footer.offsetHeight;
-
-    // Position de fin aléatoire
-    const endX = Math.random() * footer.offsetWidth;
-    const endY = Math.random() * footer.offsetHeight;
 
     img.style.left = startX + "px";
     img.style.top = startY + "px";
 
-    // Stockage des déplacements dans des variables CSS
-    img.style.setProperty("--end-x", (endX - startX) + "px");
-    img.style.setProperty("--end-y", (endY - startY) + "px");
+    // Position de fin aléatoire
+    const endX = Math.random() * footer.offsetWidth - startX;
+    const endY = Math.random() * footer.offsetHeight - startY;
+
+    img.style.setProperty("--end-x", endX + "px");
+    img.style.setProperty("--end-y", endY + "px");
+
+          // Flip horizontal si déplacement vers la gauche
+      if (endX < 0) {
+        img.style.transform = "scaleX(-1)";
+      }
 
     // Vitesse aléatoire
     const duration = 8 + Math.random() * 6;
     img.style.animationDuration = duration + "s";
 
-    // Animation via transform
+    // Animation pop + déplacement
     img.style.animationName = "popIn, walkRandom";
-    img.style.animationDuration = "0.4s, " + duration + "s";
+    img.style.animationDuration = `0.4s, ${duration}s`;
     img.style.animationDelay = "0s, 0.4s";
+    img.style.animationTimingFunction = "ease-in-out, linear";
+    img.style.animationFillMode = "forwards";
 
     footer.appendChild(img);
 
     // Disparition au clic
     img.addEventListener('click', () => img.remove());
 
-    // Suppression à la fin du trajet
-    setTimeout(() => img.remove(), duration * 1000 + 1000);
+    // Suppression après animation
+    setTimeout(() => img.remove(), (duration + 0.4) * 1000);
   }
 
   // Nouveau Pokémon toutes les 4 secondes
