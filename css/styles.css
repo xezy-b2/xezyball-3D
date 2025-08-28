@@ -173,7 +173,12 @@ body{
   .cta{display:none}
   .about-media img{width:auto; height:auto; border-radius:14px; border:1px solid var(--border)}
 }
-
+/* Sur mobile → on la cache */
+@media screen and (max-width: 768px) {
+  .about-media img {
+    display: none;
+  }
+}
 /* --- Footer Contact Button --- */
 .site-footer .link {
   display: inline-block;
