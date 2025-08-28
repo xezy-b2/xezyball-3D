@@ -174,9 +174,11 @@ body{
   .about-media img{width:auto; height:auto; border-radius:14px; border:1px solid var(--border)}
 }
 /* Sur mobile → on la cache */
-@media screen and (max-width: 768px) {
-  .about-media img {
-    { display: block; width: 90%; margin: 0 auto; }
+@media screen and (max-width: 768px) 
+{
+  .about-media img 
+  {
+    { display: block; width: 50%; margin: 0 auto; }
   }
 }
 /* --- Footer Contact Button --- */
