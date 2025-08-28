@@ -176,7 +176,7 @@ body{
 /* Sur mobile → on la cache */
 @media screen and (max-width: 768px) {
   .about-media img {
-    display: none;
+    { display: block; width: 90%; margin: 0 auto; }
   }
 }
 /* --- Footer Contact Button --- */
